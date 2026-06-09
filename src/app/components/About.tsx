@@ -17,14 +17,14 @@ export function About() {
 
           <div className="p-8 bg-card/40 backdrop-blur-sm border border-border/50 rounded-2xl">
             <p className="mb-6 text-lg text-foreground/80 leading-relaxed">
-              Passionate software developer focused on <span className="text-purple-400">Full-Stack Development</span>,
-              <span className="text-blue-400"> Cloud Infrastructure</span>,
-              <span className="text-cyan-400"> Database Design</span>, and
-              <span className="text-green-400"> Local AI Systems</span>.
+              Passionate software developer focused on Full-Stack Development,
+              Cloud Infrastructure,
+              Database Design, and
+              Local AI Systems.
             </p>
 
             <p className="text-lg text-foreground/80 leading-relaxed">
-              Currently studying Computer Science at the <span className="text-purple-400">University of the Philippines Mindanao</span>.
+              Currently studying Computer Science at the University of the Philippines Mindanao.
               Interested in backend architecture, AI integrations, self-hosted technologies, Linux, and automation.
             </p>
           </div>

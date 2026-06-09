@@ -139,6 +139,7 @@
 
   html {
     font-size: var(--font-size);
+    font-family: 'Inter', sans-serif;
   }
 
   h1 {

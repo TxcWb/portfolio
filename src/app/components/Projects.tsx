@@ -8,7 +8,7 @@ const projects = [
     tech: ["React", "FastAPI", "AWS S3", "DynamoDB", "Cognito", "CloudFront"],
     badge: "AI Project",
     badgeColor: "from-purple-500 to-pink-500",
-    github: "https://github.com/jayemersonnavares/studysurf",
+    github: "https://github.com/kindadailybren/studysurf",
     gradient: "from-purple-900/40 to-pink-900/40",
   },
   {
@@ -17,7 +17,7 @@ const projects = [
     tech: ["React", "TypeScript", "Supabase", "PostgreSQL"],
     badge: "Production System",
     badgeColor: "from-blue-500 to-cyan-500",
-    github: "https://github.com/jayemersonnavares/faculty-tracker",
+    github: "https://github.com/not-sol/cmsc127-project",
     gradient: "from-blue-900/40 to-cyan-900/40",
   },
   {
@@ -26,7 +26,7 @@ const projects = [
     tech: ["Python", "Ollama", "LangChain"],
     badge: "AI Engineering",
     badgeColor: "from-green-500 to-emerald-500",
-    github: "https://github.com/jayemersonnavares/local-ai-chatbot",
+    github: "https://github.com/TxcWb/pythonchatbot",
     gradient: "from-green-900/40 to-emerald-900/40",
   },
   {
@@ -35,7 +35,7 @@ const projects = [
     tech: ["Python", "Bash", "Linux", "Arch Linux"],
     badge: "Automation",
     badgeColor: "from-orange-500 to-red-500",
-    github: "https://github.com/jayemersonnavares/linux-automation",
+    github: "https://github.com/TxcWb/scriptsimadeformylappy",
     gradient: "from-orange-900/40 to-red-900/40",
   },
   {
@@ -44,7 +44,7 @@ const projects = [
     tech: ["Python", "BeautifulSoup", "Requests"],
     badge: "Data Engineering",
     badgeColor: "from-yellow-500 to-orange-500",
-    github: "https://github.com/jayemersonnavares/web-scraper",
+    github: "https://github.com/TxcWb/pracwebscraping",
     gradient: "from-yellow-900/40 to-orange-900/40",
   },
 ];

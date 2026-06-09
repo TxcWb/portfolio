@@ -64,15 +64,15 @@ export function Hero() {
             </h1>
 
             <div className="mb-6 text-xl md:text-2xl text-muted-foreground">
-              <span className="text-purple-400">Full-Stack Developer</span>
+              Full-Stack Developer
               <span className="mx-2">•</span>
-              <span className="text-blue-400">AI Enthusiast</span>
+              AI Enthusiast
               <span className="mx-2">•</span>
-              <span className="text-cyan-400">Systems Engineer</span>
+              Software Developer
             </div>
 
             <p className="mb-10 text-lg md:text-xl text-foreground/70 max-w-2xl mx-auto leading-relaxed">
-              I build scalable web applications, backend systems, AI-powered platforms,
+              I like to build scalable web applications, backend systems, AI-powered platforms,
               and Linux automation tools.
             </p>
 
@@ -109,22 +109,6 @@ export function Hero() {
                 <span>GitHub</span>
               </motion.a>
             </div>
-          </motion.div>
-
-          {/* Scroll Indicator */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1.5 }}
-            className="absolute bottom-10 left-1/2 -translate-x-1/2"
-          >
-            <motion.div
-              animate={{ y: [0, 10, 0] }}
-              transition={{ repeat: Infinity, duration: 2 }}
-              className="w-6 h-10 border-2 border-foreground/30 rounded-full p-1"
-            >
-              <div className="w-1.5 h-3 bg-foreground/50 rounded-full mx-auto" />
-            </motion.div>
           </motion.div>
         </div>
       </div>
