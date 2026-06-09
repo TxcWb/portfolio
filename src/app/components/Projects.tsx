@@ -8,8 +8,9 @@ const projects = [
     tech: ["React", "FastAPI", "AWS S3", "DynamoDB", "Cognito", "CloudFront"],
     badge: "AI Project",
     badgeColor: "from-purple-500 to-pink-500",
-    github: "https://github.com/kindadailybren/studysurf",
+    github: "https://github.com/TxcWb/studysurf",
     gradient: "from-purple-900/40 to-pink-900/40",
+    image: "/image/studysurf.png"
   },
   {
     title: "Faculty Accomplishment Tracker",
@@ -17,8 +18,9 @@ const projects = [
     tech: ["React", "TypeScript", "Supabase", "PostgreSQL"],
     badge: "Production System",
     badgeColor: "from-blue-500 to-cyan-500",
-    github: "https://github.com/not-sol/cmsc127-project",
+    github: "https://github.com/TxcWb/facultyaccomplishmenttracker",
     gradient: "from-blue-900/40 to-cyan-900/40",
+    image: "/image/facultyaccomplishmenttracker.png"
   },
   {
     title: "Local AI Chatbot",
@@ -28,6 +30,7 @@ const projects = [
     badgeColor: "from-green-500 to-emerald-500",
     github: "https://github.com/TxcWb/pythonchatbot",
     gradient: "from-green-900/40 to-emerald-900/40",
+    image: "/image/pythonchatbot.jpeg"
   },
   {
     title: "Linux Automation Suite",
@@ -76,7 +79,7 @@ export function Projects() {
                 className="group relative"
               >
                 <div className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-0 group-hover:opacity-100 rounded-2xl blur-xl transition-all duration-500`} />
-                <div className="relative h-full p-6 bg-card/40 backdrop-blur-sm border border-border/50 rounded-2xl hover:bg-card/60 transition-all flex flex-col">
+                <div className="relative h-full p-6 bg-card/40 backdrop-blur-sm border border-border/50 rounded-2xl hover:bg-card/60 transition-all flex flex-col overflow-hidden">
                   {/* Badge */}
                   <div className="mb-4 flex items-center justify-between">
                     <div className="flex items-center gap-2">
@@ -87,12 +90,17 @@ export function Projects() {
                     </div>
                   </div>
 
-                  {/* Project Screenshot Placeholder */}
-                  <div className={`mb-4 h-40 bg-gradient-to-br ${project.gradient} rounded-lg flex items-center justify-center`}>
-                    <div className="text-center">
-                      <div className="text-4xl mb-2">💻</div>
-                      <div className="text-sm text-foreground/50">Project Preview</div>
-                    </div>
+                  {/* Project Image/Placeholder */}
+                  <div className="mb-4 h-48 rounded-lg overflow-hidden relative bg-black border border-border/30">
+                    {project.image ? (
+                      <img
+                        src={project.image}
+                        alt={project.title}
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      />
+                    ) : (
+                      <div className="w-full h-full bg-black" />
+                    )}
                   </div>
 
                   {/* Title */}

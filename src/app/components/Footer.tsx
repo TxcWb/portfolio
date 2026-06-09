@@ -28,7 +28,7 @@ export function Footer() {
             className="flex items-center justify-center gap-6 mb-8"
           >
             <motion.a
-              href="https://github.com/jayemersonnavares"
+              href="https://github.com/TxcWb"
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.2, y: -5 }}
@@ -39,7 +39,7 @@ export function Footer() {
             </motion.a>
 
             <motion.a
-              href="https://linkedin.com/in/jayemersonnavares"
+              href="https://www.linkedin.com/in/jay-emerson-navares-998b69333/"
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.2, y: -5 }}
@@ -50,7 +50,7 @@ export function Footer() {
             </motion.a>
 
             <motion.a
-              href="mailto:jayemerson.navares@example.com"
+              href="mailto:toxicfilipinoweeb@gmail.com"
               whileHover={{ scale: 1.2, y: -5 }}
               whileTap={{ scale: 0.9 }}
               className="w-12 h-12 rounded-full bg-card/40 backdrop-blur-sm border border-border/50 flex items-center justify-center hover:bg-green-500/20 hover:border-green-500/50 transition-all group"
@@ -67,13 +67,7 @@ export function Footer() {
             transition={{ delay: 0.4, duration: 0.6 }}
             className="text-center text-foreground/60"
           >
-            <p className="flex items-center justify-center gap-2">
-              <span>© 2026 Jay Emerson P. Navares</span>
-              <span>•</span>
-              <span className="flex items-center gap-1">
-                Built with <Heart className="w-4 h-4 text-red-500 fill-red-500" /> and React
-              </span>
-            </p>
+            <p>© 2026 Jay Emerson P. Navares</p>
           </motion.div>
         </div>
       </div>

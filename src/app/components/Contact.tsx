@@ -31,7 +31,7 @@ export function Contact() {
               <div className="relative p-8 bg-card/40 backdrop-blur-sm border border-border/50 rounded-2xl">
                 <div className="space-y-4">
                   <motion.a
-                    href="https://github.com/jayemersonnavares"
+                    href="https://github.com/TxcWb"
                     target="_blank"
                     rel="noopener noreferrer"
                     whileHover={{ scale: 1.05, x: 10 }}
@@ -42,12 +42,12 @@ export function Contact() {
                     </div>
                     <div>
                       <div className="text-foreground/90 group-hover:text-purple-400 transition-colors">GitHub</div>
-                      <div className="text-sm text-foreground/60">@jayemersonnavares</div>
+                      <div className="text-sm text-foreground/60">@TxcWb</div>
                     </div>
                   </motion.a>
 
                   <motion.a
-                    href="https://linkedin.com/in/jayemersonnavares"
+                    href="https://www.linkedin.com/in/jay-emerson-navares-998b69333/"
                     target="_blank"
                     rel="noopener noreferrer"
                     whileHover={{ scale: 1.05, x: 10 }}
@@ -63,7 +63,7 @@ export function Contact() {
                   </motion.a>
 
                   <motion.a
-                    href="mailto:jayemerson.navares@example.com"
+                    href="mailto:toxicfilipinoweeb@gmail.com"
                     whileHover={{ scale: 1.05, x: 10 }}
                     className="flex items-center gap-4 p-4 bg-background/60 border border-border/30 rounded-lg hover:bg-background/80 hover:border-green-500/50 transition-all group"
                   >
@@ -72,7 +72,7 @@ export function Contact() {
                     </div>
                     <div>
                       <div className="text-foreground/90 group-hover:text-green-400 transition-colors">Email</div>
-                      <div className="text-sm text-foreground/60">jayemerson.navares@example.com</div>
+                      <div className="text-sm text-foreground/60">toxicfilipinoweeb@gmail.com</div>
                     </div>
                   </motion.a>
                 </div>

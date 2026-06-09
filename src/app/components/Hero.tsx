@@ -1,19 +1,6 @@
 import { motion } from "motion/react";
 import { Github, Mail, ArrowRight } from "lucide-react";
 
-const techStack = [
-  "React",
-  "TypeScript",
-  "FastAPI",
-  "PostgreSQL",
-  "Supabase",
-  "AWS",
-  "Python",
-  "Docker",
-  "Arch Linux",
-  "Ollama",
-];
-
 export function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -35,24 +22,6 @@ export function Hero() {
 
       <div className="container mx-auto px-6 py-20">
         <div className="max-w-4xl mx-auto text-center">
-          {/* Floating Tech Badges */}
-          <div className="mb-8 flex flex-wrap justify-center gap-3">
-            {techStack.map((tech, index) => (
-              <motion.div
-                key={tech}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1, duration: 0.5 }}
-                className="relative group"
-              >
-                <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-blue-500/20 rounded-full blur-md group-hover:blur-lg transition-all" />
-                <div className="relative px-4 py-2 bg-card/40 backdrop-blur-sm border border-border/50 rounded-full">
-                  <span className="text-sm text-foreground/90">{tech}</span>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-
           {/* Main Content */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -98,7 +67,7 @@ export function Hero() {
               </motion.button>
 
               <motion.a
-                href="https://github.com/jayemersonnavares"
+                href="https://github.com/TxcWb"
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.05 }}
