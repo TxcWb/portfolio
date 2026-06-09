@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hyprland Inspired Background</title>
+    <style>
+        :root {
+            --bg-color: #030303;
+            --grid-color: rgba(255, 255, 255, 0.05);
+            --grid-highlight: rgba(255, 255, 255, 0.15);
+            --spotlight-color: rgba(120, 119, 198, 0.15);
+            --grid-size: 40px;
+            --mouse-x: 50%;
+            --mouse-y: 50%;
+        }
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--bg-color);
+            overflow: hidden;
+            font-family: system-ui, -apple-system, sans-serif;
+            color: white;
+        }
+
+        .background-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        /* The base subtle grid */
+        .grid-base {
+            position: absolute;
+            inset: 0;
+            background-image: 
+                linear-gradient(to right, var(--grid-color) 1px, transparent 1px),
+                linear-gradient(to bottom, var(--grid-color) 1px, transparent 1px);
+            background-size: var(--grid-size) var(--grid-size);
+        }
+
+        /* The spotlight glow */
+        .spotlight {
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(
+                circle 400px at var(--mouse-x) var(--mouse-y), 
+                var(--spotlight-color), 
+                transparent 80%
+            );
+        }
+
+        /* The illuminated grid lines */
+        .grid-illuminated {
+            position: absolute;
+            inset: 0;
+            background-image: 
+                linear-gradient(to right, var(--grid-highlight) 1px, transparent 1px),
+                linear-gradient(to bottom, var(--grid-highlight) 1px, transparent 1px);
+            background-size: var(--grid-size) var(--grid-size);
+            mask-image: radial-gradient(
+                circle 300px at var(--mouse-x) var(--mouse-y), 
+                black 0%, 
+                transparent 100%
+            );
+            -webkit-mask-image: radial-gradient(
+                circle 300px at var(--mouse-x) var(--mouse-y), 
+                black 0%, 
+                transparent 100%
+            );
+        }
+
+        /* Vignette effect */
+        .vignette {
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at center, transparent 0%, rgba(0,0,0,0.5) 100%);
+        }
+
+        /* Content styling */
+        .content {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+            z-index: 1;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            letter-spacing: -0.05em;
+        }
+
+        p {
+            font-size: 1.25rem;
+            color: #a1a1aa;
+            max-width: 600px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="background-container" id="bg-container">
+        <div class="grid-base"></div>
+        <div class="spotlight"></div>
+        <div class="grid-illuminated"></div>
+        <div class="vignette"></div>
+    </div>
+
+    <div class="content">
+        <h1>Hyprland Background</h1>
+        <p>A high-performance grid background with a dynamic spotlight effect. Move your mouse to explore.</p>
+    </div>
+
+    <script>
+        const container = document.getElementById('bg-container');
+
+        window.addEventListener('mousemove', (e) => {
+            container.style.setProperty('--mouse-x', `${e.clientX}px`);
+            container.style.setProperty('--mouse-y', `${e.clientY}px`);
+        });
+
+        // Touch support
+        window.addEventListener('touchmove', (e) => {
+            if (e.touches.length > 0) {
+                container.style.setProperty('--mouse-x', `${e.touches[0].clientX}px`);
+                container.style.setProperty('--mouse-y', `${e.touches[0].clientY}px`);
+            }
+        });
+    </script>
+</body>
+</html>
