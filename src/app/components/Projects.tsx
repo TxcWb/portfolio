@@ -19,6 +19,7 @@ const projects = [
     badge: "Production System",
     badgeColor: "from-blue-500 to-cyan-500",
     github: "https://github.com/TxcWb/facultyaccomplishmenttracker",
+    externalLink: "https://canva.link/y1dy8rvafdv6v0z",
     gradient: "from-blue-900/40 to-cyan-900/40",
     image: "/image/facultyaccomplishmenttracker.png"
   },
@@ -108,11 +109,29 @@ export function Projects() {
                   {/* Project Image/Placeholder */}
                   <div className="mb-4 h-48 rounded-lg overflow-hidden relative bg-black border border-border/30">
                     {project.image ? (
-                      <img
-                        src={project.image}
-                        alt={project.title}
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                      />
+                      project.externalLink ? (
+                        <a 
+                          href={project.externalLink} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="block w-full h-full relative cursor-pointer group/image"
+                        >
+                          <img
+                            src={project.image}
+                            alt={project.title}
+                            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                          />
+                          <div className="absolute inset-0 bg-black/20 opacity-0 group-hover/image:opacity-100 transition-opacity flex items-center justify-center">
+                            <ExternalLink className="w-8 h-8 text-white drop-shadow-lg" />
+                          </div>
+                        </a>
+                      ) : (
+                        <img
+                          src={project.image}
+                          alt={project.title}
+                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                        />
+                      )
                     ) : (
                       <div className="w-full h-full bg-black" />
                     )}
