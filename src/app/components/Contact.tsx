@@ -1,84 +1,76 @@
 import { motion } from "motion/react";
-import { Github, Linkedin, Mail } from "lucide-react";
+import { Github, Linkedin, Mail, ArrowUpRight } from "lucide-react";
 
 export function Contact() {
   return (
-    <section id="contact" className="py-20 relative">
+    <section id="contact" className="py-32 relative">
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="max-w-3xl mx-auto"
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          className="max-w-4xl mx-auto"
         >
-          <h2 className="mb-4 text-center bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
-            Let's Build Something Together
-          </h2>
-          <p className="mb-12 text-center text-foreground/70 text-lg">
-            Open to opportunities, collaborations, and interesting projects
-          </p>
+          <div className="mb-20 text-center">
+            <h2 className="text-4xl md:text-5xl font-black tracking-tight mb-6 uppercase italic">
+              Connect
+            </h2>
+            <p className="text-xl text-muted-foreground/80 max-w-2xl mx-auto font-medium tracking-tight">
+              Open to collaborations on AI systems, automation pipelines, and high-performance web applications.
+            </p>
+          </div>
 
-          {/* Contact Info */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2, duration: 0.6 }}
-          >
-            <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-blue-500/20 rounded-2xl blur-xl" />
-              <div className="relative p-8 bg-card/40 backdrop-blur-sm border border-border/50 rounded-2xl">
-                <div className="space-y-4">
-                  <motion.a
-                    href="https://github.com/TxcWb"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    whileHover={{ scale: 1.05, x: 10 }}
-                    className="flex items-center gap-4 p-4 bg-background/60 border border-border/30 rounded-lg hover:bg-background/80 hover:border-purple-500/50 transition-all group"
-                  >
-                    <div className="w-12 h-12 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 flex items-center justify-center">
-                      <Github className="w-6 h-6 text-white" />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[
+              { 
+                label: "GitHub", 
+                value: "@TxcWb", 
+                href: "https://github.com/TxcWb", 
+                icon: Github,
+                color: "hover:text-purple-400"
+              },
+              { 
+                label: "LinkedIn", 
+                value: "Jay Navares", 
+                href: "https://www.linkedin.com/in/jay-emerson-navares-998b69333/", 
+                icon: Linkedin,
+                color: "hover:text-blue-400"
+              },
+              { 
+                label: "Email", 
+                value: "toxicfilipinoweeb@gmail.com", 
+                href: "mailto:toxicfilipinoweeb@gmail.com", 
+                icon: Mail,
+                color: "hover:text-emerald-400"
+              }
+            ].map((item, index) => (
+              <motion.a
+                key={item.label}
+                href={item.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                className="group relative p-8 bg-white/[0.02] backdrop-blur-md border border-white/10 rounded-2xl transition-all duration-300 hover:bg-white/[0.05] hover:border-white/20"
+              >
+                <div className="flex flex-col h-full">
+                  <div className="flex items-center justify-between mb-8">
+                    <item.icon className="w-6 h-6 text-zinc-400 group-hover:text-white transition-colors" />
+                    <ArrowUpRight className="w-4 h-4 text-zinc-600 group-hover:text-white group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
+                  </div>
+                  <div>
+                    <div className="text-xs font-bold tracking-widest uppercase text-zinc-500 mb-1">{item.label}</div>
+                    <div className={`text-sm font-semibold truncate transition-colors ${item.color}`}>
+                      {item.value}
                     </div>
-                    <div>
-                      <div className="text-foreground/90 group-hover:text-purple-400 transition-colors">GitHub</div>
-                      <div className="text-sm text-foreground/60">@TxcWb</div>
-                    </div>
-                  </motion.a>
-
-                  <motion.a
-                    href="https://www.linkedin.com/in/jay-emerson-navares-998b69333/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    whileHover={{ scale: 1.05, x: 10 }}
-                    className="flex items-center gap-4 p-4 bg-background/60 border border-border/30 rounded-lg hover:bg-background/80 hover:border-blue-500/50 transition-all group"
-                  >
-                    <div className="w-12 h-12 rounded-full bg-gradient-to-r from-blue-500 to-cyan-500 flex items-center justify-center">
-                      <Linkedin className="w-6 h-6 text-white" />
-                    </div>
-                    <div>
-                      <div className="text-foreground/90 group-hover:text-blue-400 transition-colors">LinkedIn</div>
-                      <div className="text-sm text-foreground/60">Jay Emerson Navares</div>
-                    </div>
-                  </motion.a>
-
-                  <motion.a
-                    href="mailto:toxicfilipinoweeb@gmail.com"
-                    whileHover={{ scale: 1.05, x: 10 }}
-                    className="flex items-center gap-4 p-4 bg-background/60 border border-border/30 rounded-lg hover:bg-background/80 hover:border-green-500/50 transition-all group"
-                  >
-                    <div className="w-12 h-12 rounded-full bg-gradient-to-r from-green-500 to-emerald-500 flex items-center justify-center">
-                      <Mail className="w-6 h-6 text-white" />
-                    </div>
-                    <div>
-                      <div className="text-foreground/90 group-hover:text-green-400 transition-colors">Email</div>
-                      <div className="text-sm text-foreground/60">toxicfilipinoweeb@gmail.com</div>
-                    </div>
-                  </motion.a>
+                  </div>
                 </div>
-              </div>
-            </div>
-          </motion.div>
+              </motion.a>
+            ))}
+          </div>
         </motion.div>
       </div>
     </section>

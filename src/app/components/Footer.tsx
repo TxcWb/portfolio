@@ -1,74 +1,45 @@
 import { motion } from "motion/react";
-import { Github, Linkedin, Mail, Heart } from "lucide-react";
+import { Github, Linkedin, Mail } from "lucide-react";
 
 export function Footer() {
   return (
-    <footer className="relative py-12 border-t border-border/30">
+    <footer className="relative py-20 border-t border-white/5">
       <div className="container mx-auto px-6">
-        <div className="max-w-4xl mx-auto">
-          {/* Quote */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="mb-8 text-center"
-          >
-            <p className="text-lg md:text-xl text-foreground/70 italic">
+        <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-12">
+          <div className="flex flex-col gap-4 text-center md:text-left">
+            <p className="text-xl font-bold tracking-tight text-white uppercase italic">
               "Leave tomorrow's problems to tomorrow's you."
             </p>
-          </motion.div>
+            <p className="text-sm text-zinc-500 font-medium tracking-widest uppercase">
+              Jay Emerson P. Navares — 2026
+            </p>
+          </div>
 
-          {/* Social Links */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2, duration: 0.6 }}
-            className="flex items-center justify-center gap-6 mb-8"
-          >
-            <motion.a
-              href="https://github.com/TxcWb"
-              target="_blank"
-              rel="noopener noreferrer"
-              whileHover={{ scale: 1.2, y: -5 }}
-              whileTap={{ scale: 0.9 }}
-              className="w-12 h-12 rounded-full bg-card/40 backdrop-blur-sm border border-border/50 flex items-center justify-center hover:bg-purple-500/20 hover:border-purple-500/50 transition-all group"
-            >
-              <Github className="w-5 h-5 text-foreground/70 group-hover:text-purple-400 transition-colors" />
-            </motion.a>
-
-            <motion.a
-              href="https://www.linkedin.com/in/jay-emerson-navares-998b69333/"
-              target="_blank"
-              rel="noopener noreferrer"
-              whileHover={{ scale: 1.2, y: -5 }}
-              whileTap={{ scale: 0.9 }}
-              className="w-12 h-12 rounded-full bg-card/40 backdrop-blur-sm border border-border/50 flex items-center justify-center hover:bg-blue-500/20 hover:border-blue-500/50 transition-all group"
-            >
-              <Linkedin className="w-5 h-5 text-foreground/70 group-hover:text-blue-400 transition-colors" />
-            </motion.a>
-
-            <motion.a
-              href="mailto:toxicfilipinoweeb@gmail.com"
-              whileHover={{ scale: 1.2, y: -5 }}
-              whileTap={{ scale: 0.9 }}
-              className="w-12 h-12 rounded-full bg-card/40 backdrop-blur-sm border border-border/50 flex items-center justify-center hover:bg-green-500/20 hover:border-green-500/50 transition-all group"
-            >
-              <Mail className="w-5 h-5 text-foreground/70 group-hover:text-green-400 transition-colors" />
-            </motion.a>
-          </motion.div>
-
-          {/* Copyright */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.4, duration: 0.6 }}
-            className="text-center text-foreground/60"
-          >
-            <p>© 2026 Jay Emerson P. Navares</p>
-          </motion.div>
+          <div className="flex items-center gap-8">
+            {[
+              { href: "https://github.com/TxcWb", icon: Github, label: "GitHub" },
+              { href: "https://www.linkedin.com/in/jay-emerson-navares-998b69333/", icon: Linkedin, label: "LinkedIn" },
+              { href: "mailto:toxicfilipinoweeb@gmail.com", icon: Mail, label: "Email" }
+            ].map((social) => (
+              <motion.a
+                key={social.label}
+                href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ y: -2 }}
+                className="flex items-center gap-2 text-zinc-500 hover:text-white transition-colors"
+              >
+                <social.icon className="w-4 h-4" />
+                <span className="text-xs font-bold uppercase tracking-widest hidden sm:block">{social.label}</span>
+              </motion.a>
+            ))}
+          </div>
+        </div>
+        
+        <div className="mt-20 text-center">
+          <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-700">
+            Designed & Built with Precision • 2026
+          </p>
         </div>
       </div>
     </footer>

@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import { Github, ExternalLink, Sparkles } from "lucide-react";
+import { Github, ExternalLink, Sparkles, ArrowRight } from "lucide-react";
 
 const projects = [
   {
@@ -7,9 +7,8 @@ const projects = [
     description: "Automated Educational Video Generation Platform. Converts PDFs, text, and markdown into engaging educational videos using AI segmentation and narration generation.",
     tech: ["React", "FastAPI", "AWS S3", "DynamoDB", "Cognito", "CloudFront"],
     badge: "AI Project",
-    badgeColor: "from-purple-500 to-pink-500",
+    badgeColor: "bg-purple-500/10 text-purple-400 border-purple-500/20",
     github: "https://github.com/TxcWb/studysurf",
-    gradient: "from-purple-900/40 to-pink-900/40",
     image: "/image/studysurf.png"
   },
   {
@@ -17,10 +16,9 @@ const projects = [
     description: "Faculty reporting and approval platform with role-based workflows, document management, and CSV exports.",
     tech: ["React", "TypeScript", "Supabase", "PostgreSQL"],
     badge: "Production System",
-    badgeColor: "from-blue-500 to-cyan-500",
+    badgeColor: "bg-blue-500/10 text-blue-400 border-blue-500/20",
     github: "https://github.com/TxcWb/facultyaccomplishmenttracker",
     externalLink: "https://canva.link/y1dy8rvafdv6v0z",
-    gradient: "from-blue-900/40 to-cyan-900/40",
     image: "/image/facultyaccomplishmenttracker.png"
   },
   {
@@ -28,9 +26,8 @@ const projects = [
     description: "Offline conversational AI assistant powered by Ollama, LangChain, and LLaMA 3.2. Features contextual memory and prompt templating.",
     tech: ["Python", "Ollama", "LangChain"],
     badge: "AI Engineering",
-    badgeColor: "from-green-500 to-emerald-500",
+    badgeColor: "bg-green-500/10 text-green-400 border-green-500/20",
     github: "https://github.com/TxcWb/pythonchatbot",
-    gradient: "from-green-900/40 to-emerald-900/40",
     image: "/image/pythonchatbot.jpeg"
   },
   {
@@ -38,9 +35,8 @@ const projects = [
     description: "Collection of Python and Bash automation tools for Linux system administration and productivity.",
     tech: ["Python", "Bash", "Linux", "Arch Linux"],
     badge: "Automation",
-    badgeColor: "from-orange-500 to-red-500",
+    badgeColor: "bg-orange-500/10 text-orange-400 border-orange-500/20",
     github: "https://github.com/TxcWb/scriptsimadeformylappy",
-    gradient: "from-orange-900/40 to-red-900/40",
     image: "/image/linuxscripts.png"
   },
   {
@@ -48,128 +44,116 @@ const projects = [
     description: "E-commerce data extraction pipeline with pagination handling, rate limiting, CSV exports, and error recovery.",
     tech: ["Python", "BeautifulSoup", "Requests"],
     badge: "Data Engineering",
-    badgeColor: "from-yellow-500 to-orange-500",
+    badgeColor: "bg-yellow-500/10 text-yellow-400 border-yellow-500/20",
     github: "https://github.com/TxcWb/pracwebscraping",
-    gradient: "from-yellow-900/40 to-orange-900/40",
     image: "/image/webscraper.png"
   },
 ];
 
 export function Projects() {
   return (
-    <section id="projects" className="py-20 relative">
+    <section id="projects" className="py-32 relative">
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           className="max-w-6xl mx-auto"
         >
-          <h2 className="mb-12 text-center bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
-            Featured Projects
-          </h2>
+          <div className="mb-20 text-center">
+            <h2 className="text-5xl md:text-6xl font-black tracking-tight mb-6 bg-gradient-to-b from-white to-white/50 bg-clip-text text-transparent italic uppercase">
+              Selected Works
+            </h2>
+            <p className="text-xl text-muted-foreground/80 max-w-2xl mx-auto font-medium tracking-tight">
+              A curated collection of projects exploring the intersection of AI, automation, and scalable systems.
+            </p>
+          </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {projects.map((project, index) => (
               <motion.div
                 key={project.title}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: index * 0.1, duration: 0.5 }}
-                whileHover={{ y: -8 }}
+                transition={{ delay: index * 0.1, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
                 className="group relative"
               >
-                <div className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-0 group-hover:opacity-100 rounded-2xl blur-xl transition-all duration-500`} />
-                <div className="relative h-full p-6 bg-card/40 backdrop-blur-sm border border-border/50 rounded-2xl hover:bg-card/60 transition-all flex flex-col overflow-hidden">
-                  {/* Project Background Image */}
-                  {project.image && (
-                    <div
-                      className="absolute inset-0 opacity-[0.05] group-hover:opacity-[0.1] transition-opacity duration-500 pointer-events-none"
-                      style={{
-                        backgroundImage: `url(${project.image})`,
-                        backgroundSize: 'cover',
-                        backgroundPosition: 'center',
-                        filter: 'grayscale(100%) blur(2px)',
-                      }}
-                    />
-                  )}
-                  
-                  {/* Badge */}
-                  <div className="relative mb-4 flex items-center justify-between">
-                    <div className="flex items-center gap-2">
-                      <Sparkles className="w-4 h-4 text-yellow-400" />
-                      <span className={`px-3 py-1 bg-gradient-to-r ${project.badgeColor} rounded-full text-xs text-white`}>
-                        {project.badge}
-                      </span>
-                    </div>
-                  </div>
-
-                  {/* Project Image/Placeholder */}
-                  <div className="mb-4 h-48 rounded-lg overflow-hidden relative bg-black border border-border/30">
+                <div className="relative h-full flex flex-col overflow-hidden bg-white/[0.02] backdrop-blur-md border border-white/10 rounded-3xl transition-all duration-500 hover:bg-white/[0.04] hover:border-white/20 hover:shadow-[0_0_40px_rgba(0,0,0,0.3)]">
+                  {/* Project Image Container */}
+                  <div className="aspect-video w-full overflow-hidden relative border-b border-white/10">
                     {project.image ? (
                       project.externalLink ? (
                         <a 
                           href={project.externalLink} 
                           target="_blank" 
                           rel="noopener noreferrer"
-                          className="block w-full h-full relative cursor-pointer group/image"
+                          className="block w-full h-full relative group/image"
                         >
                           <img
                             src={project.image}
                             alt={project.title}
-                            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                            className="w-full h-full object-cover grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 ease-out"
                           />
-                          <div className="absolute inset-0 bg-black/20 opacity-0 group-hover/image:opacity-100 transition-opacity flex items-center justify-center">
-                            <ExternalLink className="w-8 h-8 text-white drop-shadow-lg" />
+                          <div className="absolute inset-0 bg-black/40 opacity-0 group-hover/image:opacity-100 transition-opacity flex items-center justify-center">
+                            <ExternalLink className="w-10 h-10 text-white" />
                           </div>
                         </a>
                       ) : (
                         <img
                           src={project.image}
                           alt={project.title}
-                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                          className="w-full h-full object-cover grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 ease-out"
                         />
                       )
                     ) : (
-                      <div className="w-full h-full bg-black" />
+                      <div className="w-full h-full bg-zinc-900 flex items-center justify-center">
+                        <Sparkles className="w-12 h-12 text-zinc-800" />
+                      </div>
                     )}
                   </div>
 
-                  {/* Title */}
-                  <h3 className="relative mb-3">{project.title}</h3>
-
-                  {/* Description */}
-                  <p className="relative mb-4 text-foreground/70 leading-relaxed flex-grow">
-                    {project.description}
-                  </p>
-
-                  {/* Tech Stack */}
-                  <div className="relative mb-4 flex flex-wrap gap-2">
-                    {project.tech.map((tech) => (
-                      <span
-                        key={tech}
-                        className="px-2 py-1 bg-background/60 border border-border/30 rounded text-xs text-foreground/70"
-                      >
-                        {tech}
+                  {/* Content */}
+                  <div className="p-8 flex flex-col flex-grow">
+                    <div className="flex items-center justify-between mb-4">
+                      <span className={`px-3 py-1 rounded-full text-xs font-bold tracking-widest uppercase border ${project.badgeColor}`}>
+                        {project.badge}
                       </span>
-                    ))}
-                  </div>
+                    </div>
 
-                  {/* GitHub Button */}
-                  <motion.a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                    className="w-full px-4 py-3 bg-gradient-to-r from-purple-600 to-blue-600 rounded-lg flex items-center justify-center gap-2 hover:shadow-lg hover:shadow-purple-500/50 transition-all group/btn"
-                  >
-                    <Github className="w-4 h-4" />
-                    <span>View Repository</span>
-                    <ExternalLink className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
-                  </motion.a>
+                    <h3 className="text-2xl font-bold mb-4 tracking-tight">{project.title}</h3>
+
+                    <p className="text-muted-foreground leading-relaxed mb-6 font-medium text-sm md:text-base">
+                      {project.description}
+                    </p>
+
+                    <div className="mt-auto">
+                      <div className="flex flex-wrap gap-2 mb-8">
+                        {project.tech.map((tech) => (
+                          <span
+                            key={tech}
+                            className="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs font-semibold text-zinc-400"
+                          >
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+
+                      <motion.a
+                        href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        whileHover={{ y: -2 }}
+                        whileTap={{ scale: 0.98 }}
+                        className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-foreground hover:text-white transition-colors group/link"
+                      >
+                        <Github className="w-5 h-5" />
+                        <span>Source Code</span>
+                        <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
+                      </motion.a>
+                    </div>
+                  </div>
                 </div>
               </motion.div>
             ))}
@@ -179,3 +163,4 @@ export function Projects() {
     </section>
   );
 }
+
