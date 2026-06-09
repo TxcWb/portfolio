@@ -40,6 +40,7 @@ const projects = [
     badgeColor: "from-orange-500 to-red-500",
     github: "https://github.com/TxcWb/scriptsimadeformylappy",
     gradient: "from-orange-900/40 to-red-900/40",
+    image: "/image/linuxscripts.png"
   },
   {
     title: "Web Scraping Automation",
@@ -49,6 +50,7 @@ const projects = [
     badgeColor: "from-yellow-500 to-orange-500",
     github: "https://github.com/TxcWb/pracwebscraping",
     gradient: "from-yellow-900/40 to-orange-900/40",
+    image: "/image/webscraper.png"
   },
 ];
 
@@ -80,8 +82,21 @@ export function Projects() {
               >
                 <div className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-0 group-hover:opacity-100 rounded-2xl blur-xl transition-all duration-500`} />
                 <div className="relative h-full p-6 bg-card/40 backdrop-blur-sm border border-border/50 rounded-2xl hover:bg-card/60 transition-all flex flex-col overflow-hidden">
+                  {/* Project Background Image */}
+                  {project.image && (
+                    <div
+                      className="absolute inset-0 opacity-[0.05] group-hover:opacity-[0.1] transition-opacity duration-500 pointer-events-none"
+                      style={{
+                        backgroundImage: `url(${project.image})`,
+                        backgroundSize: 'cover',
+                        backgroundPosition: 'center',
+                        filter: 'grayscale(100%) blur(2px)',
+                      }}
+                    />
+                  )}
+                  
                   {/* Badge */}
-                  <div className="mb-4 flex items-center justify-between">
+                  <div className="relative mb-4 flex items-center justify-between">
                     <div className="flex items-center gap-2">
                       <Sparkles className="w-4 h-4 text-yellow-400" />
                       <span className={`px-3 py-1 bg-gradient-to-r ${project.badgeColor} rounded-full text-xs text-white`}>
@@ -104,15 +119,15 @@ export function Projects() {
                   </div>
 
                   {/* Title */}
-                  <h3 className="mb-3">{project.title}</h3>
+                  <h3 className="relative mb-3">{project.title}</h3>
 
                   {/* Description */}
-                  <p className="mb-4 text-foreground/70 leading-relaxed flex-grow">
+                  <p className="relative mb-4 text-foreground/70 leading-relaxed flex-grow">
                     {project.description}
                   </p>
 
                   {/* Tech Stack */}
-                  <div className="mb-4 flex flex-wrap gap-2">
+                  <div className="relative mb-4 flex flex-wrap gap-2">
                     {project.tech.map((tech) => (
                       <span
                         key={tech}
