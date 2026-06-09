@@ -66,7 +66,7 @@ export function Projects() {
               Selected Works
             </h2>
             <p className="text-xl text-muted-foreground/80 max-w-2xl mx-auto font-medium tracking-tight">
-              A curated collection of projects exploring the intersection of AI, automation, and scalable systems.
+              A collection of notable projects that I made throughout my college life.
             </p>
           </div>
 

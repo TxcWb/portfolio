@@ -31,8 +31,7 @@ export function Hero() {
             </div>
 
             <p className="mb-12 text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto leading-relaxed font-light">
-              Crafting scalable web ecosystems, AI-driven architectures, 
-              and elegant Linux automation tools with a focus on precision and performance.
+              I love turning ideas into practical software, from scalable web applications and AI-driven projects to Linux automation tools that solve real-world problems and save time.
             </p>
 
             <div className="flex flex-wrap items-center justify-center gap-6">

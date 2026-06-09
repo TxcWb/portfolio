@@ -36,14 +36,14 @@ export function Skills() {
         >
           <div className="mb-20 text-center">
             <h2 className="text-4xl md:text-5xl font-black tracking-tight mb-4 uppercase italic">
-              Stack
+              Tech Stack
             </h2>
             <p className="text-muted-foreground font-medium tracking-widest uppercase text-xs">
               Tools of the trade
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="flex flex-wrap justify-center gap-6">
             {skillCategories.map((category, index) => (
               <motion.div
                 key={category.title}
@@ -51,7 +51,7 @@ export function Skills() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-                className="relative p-8 bg-white/[0.02] backdrop-blur-md border border-white/10 rounded-2xl hover:border-white/20 transition-all duration-300 group h-full"
+                className="relative p-8 bg-white/[0.02] backdrop-blur-md border border-white/10 rounded-2xl hover:border-white/20 transition-all duration-300 group w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)]"
               >
                 <h3 className="text-lg font-bold mb-6 tracking-widest uppercase text-white/90 group-hover:text-white transition-colors">
                   {category.title}

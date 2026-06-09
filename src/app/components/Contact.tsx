@@ -17,7 +17,7 @@ export function Contact() {
               Connect
             </h2>
             <p className="text-xl text-muted-foreground/80 max-w-2xl mx-auto font-medium tracking-tight">
-              Open to collaborations on AI systems, automation pipelines, and high-performance web applications.
+              Open for collaborations!
             </p>
           </div>
 
