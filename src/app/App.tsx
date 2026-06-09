@@ -8,7 +8,7 @@ import { SpotlightEffect } from "./components/ui/SpotlightEffect";
 
 export default function App() {
   return (
-    <div className="relative min-h-screen bg-background text-foreground dark selection:bg-purple-500/30">
+    <div className="relative min-h-screen text-foreground dark selection:bg-purple-500/30">
       <SpotlightEffect />
       <main className="relative z-10">
         <Hero />

@@ -18,12 +18,11 @@ export const SpotlightEffect: React.FC = () => {
     if (!container) return;
 
     const handleMouseMove = (e: MouseEvent) => {
-      // Use setProperty for high-performance updates without React state
       container.style.setProperty('--mouse-x', `${e.clientX}px`);
       container.style.setProperty('--mouse-y', `${e.clientY}px`);
     };
 
-    // Initial position
+    // Initial position at center
     container.style.setProperty('--mouse-x', '50%');
     container.style.setProperty('--mouse-y', '50%');
 
@@ -34,20 +33,19 @@ export const SpotlightEffect: React.FC = () => {
   return (
     <div
       ref={containerRef}
-      className="fixed inset-0 pointer-events-none z-[-1] overflow-hidden bg-[#030303]"
+      className="fixed inset-0 pointer-events-none z-0 overflow-hidden bg-[#030303]"
       style={{
-        // Define base variables for the spotlight
-        // @ts-ignore - custom properties
-        '--spotlight-color': 'rgba(120, 119, 198, 0.15)',
-        '--grid-color': 'rgba(255, 255, 255, 0.05)',
-        '--grid-size': '40px',
+        // @ts-ignore
+        '--spotlight-color': 'rgba(120, 119, 198, 0.2)',
+        '--grid-color': 'rgba(255, 255, 255, 0.07)',
+        '--grid-size': '50px',
       } as React.CSSProperties}
       aria-hidden="true"
     >
-      {/* 
-        The Grid Layer 
-        Uses linear-gradients to create a sharp, repeating grid.
-      */}
+      {/* 1. Base Dark Background (Redundant but safe) */}
+      <div className="absolute inset-0 bg-[#030303]" />
+
+      {/* 2. Base Grid Layer - Slightly more visible */}
       <div 
         className="absolute inset-0"
         style={{
@@ -59,52 +57,43 @@ export const SpotlightEffect: React.FC = () => {
         }}
       />
 
-      {/* 
-        The Spotlight Layer 
-        Uses a radial-gradient that follows the --mouse-x and --mouse-y variables.
-        The 'mix-blend-mode: screen' or similar can be used if needed, but 
-        simple transparency works best for readability.
-      */}
+      {/* 3. Primary Spotlight Glow - Larger and slightly more opaque */}
       <div 
-        className="absolute inset-0 transition-opacity duration-500"
+        className="absolute inset-0"
         style={{
           background: `radial-gradient(
-            circle 400px at var(--mouse-x) var(--mouse-y), 
+            circle 500px at var(--mouse-x) var(--mouse-y), 
             var(--spotlight-color), 
             transparent 80%
           )`,
         }}
       />
 
-      {/* 
-        The Masked Grid Layer
-        This layer only shows the grid where the spotlight is, 
-        creating the "illuminating the grid" effect.
-      */}
+      {/* 4. Illuminated Grid Layer - This is the "Hyprland" punch */}
       <div 
         className="absolute inset-0"
         style={{
           backgroundImage: `
-            linear-gradient(to right, rgba(255, 255, 255, 0.15) 1px, transparent 1px),
-            linear-gradient(to bottom, rgba(255, 255, 255, 0.15) 1px, transparent 1px)
+            linear-gradient(to right, rgba(255, 255, 255, 0.25) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(255, 255, 255, 0.25) 1px, transparent 1px)
           `,
           backgroundSize: 'var(--grid-size) var(--grid-size)',
           maskImage: `radial-gradient(
-            circle 300px at var(--mouse-x) var(--mouse-y), 
+            circle 350px at var(--mouse-x) var(--mouse-y), 
             black 0%, 
             transparent 100%
           )`,
           WebkitMaskImage: `radial-gradient(
-            circle 300px at var(--mouse-x) var(--mouse-y), 
+            circle 350px at var(--mouse-x) var(--mouse-y), 
             black 0%, 
             transparent 100%
           )`,
         }}
       />
 
-      {/* Vignette for depth */}
+      {/* 5. Depth/Vignette */}
       <div 
-        className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.5)_100%)]" 
+        className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.6)_100%)]" 
       />
     </div>
   );
