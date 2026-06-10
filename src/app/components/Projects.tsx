@@ -28,6 +28,7 @@ const projects = [
     badge: "AI Engineering",
     badgeColor: "bg-green-500/10 text-green-400 border-green-500/20",
     github: "https://github.com/TxcWb/pythonchatbot",
+    externalLink:"https://dev.to/up_min_sparcs/how-to-make-a-chatbot-in-python-using-a-local-llm-7h8?fbclid=IwY2xjawSTcuRleHRuA2FlbQIxMQBicmlkETFhOEpVOXVLNDBVSnpJekppc3J0YwZhcHBfaWQQMjIyMDM5MTc4ODIwMDg5MgABHuXCC4c63dWE9x-JJtooQ7p6dFFKApm8chtRlQkOelxAR-qNdy7zCmQqf13A_aem_mwAFDU3ZxxGtKp_Gj3AQDg"
     image: "/image/pythonchatbot.jpeg"
   },
   {
